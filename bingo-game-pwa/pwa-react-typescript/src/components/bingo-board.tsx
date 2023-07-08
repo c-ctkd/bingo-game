@@ -55,7 +55,7 @@ export const BingoBoard: FC = () => {
     return (
       <div className="sequence-container">
         {last8N.map((n, index) => {
-          if (index === 6) {
+          if (index === 0) {
             return (
               <div className="sequence-item last" key={index}>
                 {n}
