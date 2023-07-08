@@ -57,7 +57,8 @@ registerRoute(
 // precache, in this case same-origin .png requests like those from in public/
 registerRoute(
   // Add in any other file extensions or routing criteria as needed.
-  ({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.png'),
+  ({ url }) =>
+    url.origin === self.location.origin && url.pathname.endsWith('.png'),
   // Customize this strategy as needed, e.g., by changing to CacheFirst.
   new StaleWhileRevalidate({
     cacheName: 'images',
@@ -77,4 +78,25 @@ self.addEventListener('message', (event) => {
   }
 });
 
+//example stuff
+const appShellFiles = [
+  '/pwa-examples/js13kpwa/',
+  '/pwa-examples/js13kpwa/index.html',
+  '/pwa-examples/js13kpwa/app.js',
+  '/pwa-examples/js13kpwa/style.css',
+  '/pwa-examples/js13kpwa/fonts/graduate.eot',
+  '/pwa-examples/js13kpwa/fonts/graduate.ttf',
+  '/pwa-examples/js13kpwa/fonts/graduate.woff',
+  '/pwa-examples/js13kpwa/favicon.ico',
+  '/pwa-examples/js13kpwa/img/js13kgames.png',
+  '/pwa-examples/js13kpwa/img/bg.png',
+  '/pwa-examples/js13kpwa/icons/icon-32.png',
+  '/pwa-examples/js13kpwa/icons/icon-64.png',
+  '/pwa-examples/js13kpwa/icons/icon-96.png',
+  '/pwa-examples/js13kpwa/icons/icon-128.png',
+  '/pwa-examples/js13kpwa/icons/icon-168.png',
+  '/pwa-examples/js13kpwa/icons/icon-192.png',
+  '/pwa-examples/js13kpwa/icons/icon-256.png',
+  '/pwa-examples/js13kpwa/icons/icon-512.png',
+];
 // Any other custom service worker logic can go here.
