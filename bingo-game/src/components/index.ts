@@ -1,1 +1,1 @@
-export const cena = '';
+export * from './bingo-board';

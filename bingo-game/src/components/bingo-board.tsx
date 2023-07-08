@@ -1,22 +1,24 @@
 import { FC, useEffect, useMemo, useState } from 'react';
 import Modal from 'react-modal';
-
+import './bingo-board.scss';
 export const BingoBoard: FC = () => {
   const [usedNumbers, setUsedNumbers] = useState<Set<number>>(new Set());
   const [gameOver, setGameOver] = useState<boolean>(false);
   const [openModal, setOpenModal] = useState<boolean>(false);
 
   const getNumber = () => {
-    var picked = false;
-    var updatedUsedN = usedNumbers;
+    //debugger;
+    let picked = false;
+    let updatedUsedN = new Set(usedNumbers.values());
     do {
-      var number = Math.floor(Math.random() * 90) + 1;
+      let number = Math.floor(Math.random() * 90) + 1;
       if (!usedNumbers.has(number)) {
         updatedUsedN.add(number);
         picked = true;
       }
-      setUsedNumbers(updatedUsedN);
     } while (!picked);
+
+    setUsedNumbers(updatedUsedN);
   };
 
   useEffect(() => {
@@ -26,12 +28,17 @@ export const BingoBoard: FC = () => {
   }, [usedNumbers]);
 
   const generateBoard = () => {
+    console.log('generating board');
     const board = [];
     for (let i = 0; i < 90; i++) {
       const className = usedNumbers.has(i + 1)
         ? 'number-cell used'
         : 'number-cell';
-      board.push(<div className={className}>{i + 1}</div>);
+      board.push(
+        <div className={className} key={i}>
+          {i + 1}
+        </div>
+      );
     }
     return board;
   };
@@ -49,9 +56,17 @@ export const BingoBoard: FC = () => {
       <div className="sequence-container">
         {last8N.map((n, index) => {
           if (index === 6) {
-            return <div className="sequence-item last">{n}</div>;
+            return (
+              <div className="sequence-item last" key={index}>
+                {n}
+              </div>
+            );
           }
-          return <div className="sequence-item">{n}</div>;
+          return (
+            <div className="sequence-item" key={index}>
+              {n}
+            </div>
+          );
         })}
       </div>
     );
@@ -62,36 +77,41 @@ export const BingoBoard: FC = () => {
     setUsedNumbers(new Set<number>());
   };
 
-  if (gameOver) {
-    return <div>Game Over</div>;
-  }
-
+  useEffect(() => {
+    if (gameOver) {
+      setOpenModal(true);
+    }
+  }, [gameOver]);
+  console.log(usedNumbers);
   return (
     <div className="main-content">
       <h2>Bingo Game</h2>
       {getSequence()}
       <div className="bingo-number-container">{generateBoard()}</div>
       <div className="action-buttons">
-        <button className="action-button" onClick={handleReset}>
+        <button className="action-button" onClick={getNumber}>
           pick number!
         </button>
         <button className="action-button" onClick={handleReset}>
           Reset!
         </button>
       </div>
-      <Modal isOpen={openModal} onRequestClose={() => setOpenModal(false)}>
-        <div className="modal-content">
-          <h2>Game Over!</h2>
-          <button
-            className="action-button"
-            onClick={() => {
-              setOpenModal(false);
-              handleReset();
-            }}
-          >
-            Play Again!
-          </button>
-        </div>
+      <Modal
+        isOpen={openModal}
+        onRequestClose={() => setOpenModal(false)}
+        onAfterClose={() => handleReset()}
+        className="modal"
+      >
+        <h2>Game Over!</h2>
+        <button
+          className="action-button"
+          onClick={() => {
+            setOpenModal(false);
+            handleReset();
+          }}
+        >
+          Play Again!
+        </button>
       </Modal>
     </div>
   );
