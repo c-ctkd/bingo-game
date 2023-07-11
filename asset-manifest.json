@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/bingo-game/static/css/main.4fe16e11.css",
+    "main.js": "/bingo-game/static/js/main.3347d83f.js",
+    "static/js/787.85194145.chunk.js": "/bingo-game/static/js/787.85194145.chunk.js",
+    "service-worker.js": "/bingo-game/service-worker.js",
+    "static/media/candi-logo.jpg": "/bingo-game/static/media/candi-logo.70481dc9baf6fc1ecce1.jpg",
+    "index.html": "/bingo-game/index.html",
+    "main.4fe16e11.css.map": "/bingo-game/static/css/main.4fe16e11.css.map",
+    "main.3347d83f.js.map": "/bingo-game/static/js/main.3347d83f.js.map",
+    "787.85194145.chunk.js.map": "/bingo-game/static/js/787.85194145.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4fe16e11.css",
+    "static/js/main.3347d83f.js"
+  ]
+}
