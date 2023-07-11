@@ -79,7 +79,7 @@ self.addEventListener('message', (event) => {
 });
 
 //example stuff
-const appShellFiles = [
+/*const appShellFiles = [
   '/pwa-examples/js13kpwa/',
   '/pwa-examples/js13kpwa/index.html',
   '/pwa-examples/js13kpwa/app.js',
@@ -99,4 +99,4 @@ const appShellFiles = [
   '/pwa-examples/js13kpwa/icons/icon-256.png',
   '/pwa-examples/js13kpwa/icons/icon-512.png',
 ];
-// Any other custom service worker logic can go here.
+// Any other custom service worker logic can go here.*/
