@@ -16,12 +16,12 @@ export const BingoBoard: FC = () => {
     do {
       let number = Math.floor(Math.random() * 75) + 1;
       if (!usedNumbers.has(number)) {
-        curr = number
+        curr = number;
         updatedUsedN.add(number);
         picked = true;
       }
     } while (!picked);
-    setCurrent(curr)
+    setCurrent(curr);
     setUsedNumbers(updatedUsedN);
   };
 
@@ -32,7 +32,6 @@ export const BingoBoard: FC = () => {
   }, [usedNumbers]);
 
   const generateBoard = () => {
-    console.log('generating board');
     const board = [];
     for (let i = 0; i < 75; i++) {
       const className = usedNumbers.has(i + 1)
@@ -40,46 +39,17 @@ export const BingoBoard: FC = () => {
         : 'number-cell';
       board.push(
         <div className={className} key={i}>
-          {i + 1}
+          <p>{i + 1}</p>
         </div>
       );
     }
     return board;
   };
 
-  const getSequence = () => {
-    const last8N = Array.from(usedNumbers.values()).slice(-7);
-
-    if (last8N.length < 7) {
-      do {
-        last8N.push(0);
-      } while (last8N.length < 7);
-    }
-
-    return (
-      <div className="sequence-container">
-        {last8N.map((n, index) => {
-          if (index === 0) {
-            return (
-              <div className="sequence-item last" key={index}>
-                {n}
-              </div>
-            );
-          }
-          return (
-            <div className="sequence-item" key={index}>
-              {n}
-            </div>
-          );
-        })}
-      </div>
-    );
-  };
-
   const handleReset = () => {
     setGameOver(false);
     setUsedNumbers(new Set<number>());
-    setCurrent(undefined)
+    setCurrent(undefined);
   };
 
   useEffect(() => {
@@ -91,25 +61,20 @@ export const BingoBoard: FC = () => {
   return (
     <div className="main-content">
       {/*getSequence()*/}
-      <div className='score-container'>
-        <div className="bingo-number-container">
-          {generateBoard()}
-        </div>
-        <div className='display-current'>
-          {current || '-'}
-        </div>
+      <div className="score-container">
+        <div className="bingo-number-container">{generateBoard()}</div>
+        <div className="display-current">{current || '-'}</div>
         <div className="action-buttons">
           <button className="action-button" onClick={getNumber}>
             pick number!
           </button>
           <button className="action-button" onClick={handleReset}>
-            Reset!
+            reset!
           </button>
         </div>
       </div>
-      <div className='logo-container'></div>
-      
-      
+      <div className="logo-container"></div>
+
       <Modal
         isOpen={openModal}
         onRequestClose={() => setOpenModal(false)}

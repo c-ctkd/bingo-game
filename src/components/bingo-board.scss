@@ -2,12 +2,14 @@
     padding: 16px;
     display: flex;
     gap: 16px;
-
+    font-family: 'Virgil';
     .score-container{
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        width: 100%;
         .bingo-number-container{
+            background-color: #ff770b;
             border-radius: 8px;
             box-shadow: 1px 1px 5px;
             padding: 16px;
@@ -15,9 +17,9 @@
             flex-wrap: wrap;
             gap: 8px;
             border: 1px solid;
-            width: 50vw;
             margin-bottom: 20px;
             .number-cell{
+                background-color: #f1f1f1;
                 border: 1px solid;
                 height: 50px;
                 width: 50px;
@@ -26,7 +28,7 @@
                 justify-content: center;
                 text-align: center;
                 &.used{
-                    background-color: #ff770b;
+                    background-color: #a56c3d;
                     color: #FFFFFF;
                     border: 1px solid #000000;
                 }
@@ -35,7 +37,7 @@
 
         .display-current{
             margin: 20px auto;
-            width: 50vw;
+            width: 100%;
             font-size: 60px;
             border: 1px solid;
             border-radius: 8px;
@@ -57,13 +59,17 @@
             justify-content: center;
             gap:16px;
             .action-button{
-                height: 40px;
+                height: 56px;
                 border-radius: 16px;
                 box-shadow: 1px 1px 5px;
                 border-radius: 8px;
                 display: flex;
                 justify-content: center;
                 text-transform: capitalize;
+                padding-top: 16px;
+                font-family: 'Virgil';
+                font-size: large;
+                width: 140px;
             }
         }
     }
@@ -73,6 +79,7 @@
         background-image: url('/candi-logo.jpg');
         background-repeat: no-repeat;
         background-position: center;
+        background-size: contain;
     }
 
 }
