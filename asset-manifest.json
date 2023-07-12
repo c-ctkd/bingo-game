@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/bingo-game/static/css/main.ea8fcc74.css",
-    "main.js": "/bingo-game/static/js/main.3347d83f.js",
+    "main.css": "/bingo-game/static/css/main.82a38037.css",
+    "main.js": "/bingo-game/static/js/main.9cd74679.js",
     "static/js/787.85194145.chunk.js": "/bingo-game/static/js/787.85194145.chunk.js",
+    "static/media/Virgil.woff2": "/bingo-game/static/media/Virgil.740490b285bcdadee39a.woff2",
     "service-worker.js": "/bingo-game/service-worker.js",
     "static/media/candi-logo.jpg": "/bingo-game/static/media/candi-logo.70481dc9baf6fc1ecce1.jpg",
     "index.html": "/bingo-game/index.html",
-    "main.ea8fcc74.css.map": "/bingo-game/static/css/main.ea8fcc74.css.map",
-    "main.3347d83f.js.map": "/bingo-game/static/js/main.3347d83f.js.map",
+    "main.82a38037.css.map": "/bingo-game/static/css/main.82a38037.css.map",
+    "main.9cd74679.js.map": "/bingo-game/static/js/main.9cd74679.js.map",
     "787.85194145.chunk.js.map": "/bingo-game/static/js/787.85194145.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ea8fcc74.css",
-    "static/js/main.3347d83f.js"
+    "static/css/main.82a38037.css",
+    "static/js/main.9cd74679.js"
   ]
 }
