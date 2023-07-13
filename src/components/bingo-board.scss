@@ -74,13 +74,24 @@
         }
     }
 
-    .logo-container{
+    .second-half{
+        display: flex;
+        flex-direction: column;
         width: 100%;
-        background-image: url('/candi-logo.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
+        .separator{
+            flex-grow: 0.8;
+        }
+
+        .logo-container{
+            width: 100%;
+            background-image: url('/candi-logo.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            flex-grow: 1;
+            background-size: contain;
+        }
     }
+    
 
 }
     

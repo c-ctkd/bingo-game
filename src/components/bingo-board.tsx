@@ -73,7 +73,10 @@ export const BingoBoard: FC = () => {
           </button>
         </div>
       </div>
-      <div className="logo-container"></div>
+      <div className="second-half">
+        <div className="separator"></div>
+        <div className="logo-container"></div>
+      </div>
 
       <Modal
         isOpen={openModal}
